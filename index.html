@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStore - Premium E-Commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-shopping-bag"></i> LuxeStore
+        </div>
+        <div class="nav-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="cart-icon-wrapper" onclick="scrollToCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+        </div>
+    </nav>
+
+    
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">New Season Arrivals</span>
+            <h1 class="hero-title">Upgrade Your Style</h1>
+            <p class="hero-text">Discover the latest trends in technology and fashion with exclusive deals.</p>
+            <button class="hero-btn" onclick="scrollToProducts()">Shop Now <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </header>
+
+  
+    <div class="container" id="products-anchor">
+        
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn" onclick="filterProducts('Tech')">Tech</button>
+            <button class="filter-btn" onclick="filterProducts('Fashion')">Fashion</button>
+            <button class="filter-btn" onclick="filterProducts('Lifestyle')">Lifestyle</button>
+        </div>
+
+        <div class="content-wrapper">
+            
+            <main class="products-grid" id="product-container">
+        
+            </main>
+
+            <aside class="cart-sidebar" id="cart-sidebar">
+                <h3 class="cart-title"><i class="fas fa-receipt"></i> Your Order</h3>
+                <div class="cart-items" id="cart-items">
+                </div>
+                
+                <div class="cart-footer">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>₹<span id="subtotal">0</span></span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span class="highlight">₹<span id="total-price">0</span></span>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout()">
+                        Checkout <i class="fas fa-lock"></i>
+                    </button>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+   
+    <footer>
+        <p>&copy;</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
