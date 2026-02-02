@@ -1,86 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxeStore - Premium E-Commerce</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Simple Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <i class="fas fa-shopping-bag"></i> LuxeStore
-        </div>
-        <div class="nav-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="cart-icon-wrapper" onclick="scrollToCart()">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge" id="cart-count">0</span>
-        </div>
+
+<header>
+    <h1>Simple Online Store</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+        <a href="#">Checkout</a>
     </nav>
+</header>
 
-    
-    <header class="hero">
-        <div class="hero-content">
-            <span class="hero-subtitle">New Season Arrivals</span>
-            <h1 class="hero-title">Upgrade Your Style</h1>
-            <p class="hero-text">Discover the latest trends in technology and fashion with exclusive deals.</p>
-            <button class="hero-btn" onclick="scrollToProducts()">Shop Now <i class="fas fa-arrow-right"></i></button>
-        </div>
-    </header>
+<hr>
 
-  
-    <div class="container" id="products-anchor">
-        
-        <!-- Filter Bar -->
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterProducts('all')">All</button>
-            <button class="filter-btn" onclick="filterProducts('Tech')">Tech</button>
-            <button class="filter-btn" onclick="filterProducts('Fashion')">Fashion</button>
-            <button class="filter-btn" onclick="filterProducts('Lifestyle')">Lifestyle</button>
-        </div>
+<main>
 
-        <div class="content-wrapper">
-            
-            <main class="products-grid" id="product-container">
-        
-            </main>
+<section>
+    <h2>Welcome</h2>
+    <p>This is a basic ecommerce website created using HTML, CSS and JavaScript.</p>
+</section>
 
-            <aside class="cart-sidebar" id="cart-sidebar">
-                <h3 class="cart-title"><i class="fas fa-receipt"></i> Your Order</h3>
-                <div class="cart-items" id="cart-items">
-                </div>
-                
-                <div class="cart-footer">
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span>₹<span id="subtotal">0</span></span>
-                    </div>
-                    <div class="summary-row total-row">
-                        <span>Total</span>
-                        <span class="highlight">₹<span id="total-price">0</span></span>
-                    </div>
-                    <button class="checkout-btn" onclick="checkout()">
-                        Checkout <i class="fas fa-lock"></i>
-                    </button>
-                </div>
-            </aside>
+<section>
+    <h2>Categories</h2>
+    <ul>
+        <li>Electronics</li>
+        <li>Clothing</li>
+        <li>Books</li>
+    </ul>
+</section>
 
-        </div>
-    </div>
+<section>
+    <h2>Products</h2>
 
-   
-    <footer>
-        <p>&copy;</p>
-    </footer>
+    <table border="1">
+        <caption>Product Details</caption>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>₹599</td>
+            <td><button onclick="addItem()">Add</button></td>
+        </tr>
+        <tr>
+            <td>T-Shirt</td>
+            <td>₹799</td>
+            <td><button onclick="addItem()">Add</button></td>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>₹199</td>
+            <td><button onclick="addItem()">Add</button></td>
+        </tr>
+    </table>
+</section>
 
-    <script src="script.js"></script>
+<article>
+    <h3>Offer</h3>
+    <p>Limited stock available</p>
+    <meter value="6" min="0" max="10"></meter>
+</article>
+
+<aside>
+    <details>
+        <summary>Delivery Info</summary>
+        <p>Delivered within 5 working days</p>
+    </details>
+</aside>
+
+<section>
+    <h2>Checkout</h2>
+
+    <form>
+        <fieldset>
+            <legend>Customer Info</legend>
+
+            <label>Name</label><br>
+            <input type="text"><br><br>
+
+            <label>Email</label><br>
+            <input type="email"><br><br>
+
+            <label>Address</label><br>
+            <textarea rows="3"></textarea><br><br>
+
+            <label>Payment</label><br>
+            <select>
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Card</option>
+            </select><br><br>
+
+            <button type="button" onclick="placeOrder()">Place Order</button>
+        </fieldset>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <hr>
+    <address>
+        Email: shop@email.com<br>
+        City: Mangalore
+    </address>
+    <p>© 2026 Simple Shop</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
