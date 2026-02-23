@@ -7,7 +7,7 @@
 <body>
 
 <header>
-    <h1>Simple Online Store</h1>
+    <h1>Shop @ Online Store</h1>
     <nav>
         <a href="#">Home</a>
         <a href="#">Products</a>
@@ -16,101 +16,70 @@
     </nav>
 </header>
 
-<hr>
-
 <main>
-
-<section>
-    <h2>Welcome</h2>
-    <p>This is a basic ecommerce website created using HTML, CSS and JavaScript.</p>
-</section>
-
-<section>
-    <h2>Categories</h2>
-    <ul>
-        <li>Electronics</li>
-        <li>Clothing</li>
-        <li>Books</li>
-    </ul>
-</section>
 
 <section>
     <h2>Products</h2>
 
-    <table border="1">
-        <caption>Product Details</caption>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-        <tr>
-            <td>Mouse</td>
-            <td>₹599</td>
-            <td><button onclick="addItem()">Add</button></td>
-        </tr>
-        <tr>
-            <td>T-Shirt</td>
-            <td>₹799</td>
-            <td><button onclick="addItem()">Add</button></td>
-        </tr>
-        <tr>
-            <td>Notebook</td>
-            <td>₹199</td>
-            <td><button onclick="addItem()">Add</button></td>
-        </tr>
-    </table>
+    <div class="products">
+        <div class="product">
+            <img src="images/tshirt.jpg">
+            <h3>T-Shirt</h3>
+            <p>₹799</p>
+            <button onclick="addToCart('T-Shirt', 799)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/book.jpg">
+            <h3>Book</h3>
+            <p>₹299</p>
+            <button onclick="addToCart('Book', 299)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/laptop.jpg">
+            <h3>Laptop</h3>
+            <p>₹55000</p>
+            <button onclick="addToCart('Laptop', 55000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/phone.jpg">
+            <h3>Phone</h3>
+            <p>₹25000</p>
+            <button onclick="addToCart('Phone', 25000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/keyboard.jpg">
+            <h3>Keyboard</h3>
+            <p>₹1499</p>
+            <button onclick="addToCart('Keyboard', 1499)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="images/mouse.jpg">
+            <h3>Mouse</h3>
+            <p>₹599</p>
+            <button onclick="addToCart('Mouse', 599)">Add to Cart</button>
+        </div>
+    </div>
 </section>
 
-<article>
-    <h3>Offer</h3>
-    <p>Limited stock available</p>
-    <meter value="6" min="0" max="10"></meter>
-</article>
-
-<aside>
-    <details>
-        <summary>Delivery Info</summary>
-        <p>Delivered within 5 working days</p>
-    </details>
-</aside>
+<section>
+    <h2>Cart</h2>
+    <ul id="cartList"></ul>
+    <h3 id="total"></h3>
+</section>
 
 <section>
     <h2>Checkout</h2>
-
-    <form>
-        <fieldset>
-            <legend>Customer Info</legend>
-
-            <label>Name</label><br>
-            <input type="text"><br><br>
-
-            <label>Email</label><br>
-            <input type="email"><br><br>
-
-            <label>Address</label><br>
-            <textarea rows="3"></textarea><br><br>
-
-            <label>Payment</label><br>
-            <select>
-                <option>Cash on Delivery</option>
-                <option>UPI</option>
-                <option>Card</option>
-            </select><br><br>
-
-            <button type="button" onclick="placeOrder()">Place Order</button>
-        </fieldset>
-    </form>
+    <button onclick="checkout()">Place Order</button>
 </section>
 
 </main>
 
 <footer>
-    <hr>
-    <address>
-        Email: shop@email.com<br>
-        City: Mangalore
-    </address>
     <p>© 2026 Simple Shop</p>
 </footer>
 
